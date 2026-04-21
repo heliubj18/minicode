@@ -1,6 +1,6 @@
 App({
   globalData: {
-    amapKey: 'e176906e9dcd291f4f81c71e8c8c714e',
+    amapKey: '***',
 
     // 模拟司机数据
     driver: {
