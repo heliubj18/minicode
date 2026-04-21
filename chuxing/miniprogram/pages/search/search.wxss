@@ -1,0 +1,122 @@
+.search-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #fff;
+}
+
+.search-header {
+  background: #fff;
+  padding: 8px 16px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-input {
+  flex: 1;
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 15px;
+  color: #333;
+}
+
+.cancel-btn {
+  font-size: 15px;
+  color: #4A90D9;
+  white-space: nowrap;
+}
+
+.result-area {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+/* 搜索结果 */
+.result-list {
+  padding: 0 16px;
+}
+
+.result-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.result-icon {
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.result-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.result-name {
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.result-addr {
+  font-size: 13px;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 加载 */
+.loading-tip {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* 历史记录 */
+.history-section {
+  padding: 16px;
+}
+
+.section-title {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.history-icon {
+  font-size: 16px;
+}
+
+.history-text {
+  font-size: 15px;
+  color: #333;
+}
+
+/* 空状态 */
+.empty-tip {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 14px;
+}

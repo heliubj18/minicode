@@ -1,0 +1,74 @@
+<!-- 全屏地图 -->
+<map
+  id="tripMap"
+  class="map"
+  latitude="{{latitude}}"
+  longitude="{{longitude}}"
+  scale="{{scale}}"
+  markers="{{markers}}"
+  polyline="{{polyline}}"
+  show-location
+  enable-zoom
+  enable-scroll
+>
+</map>
+
+<!-- 顶部状态栏占位 -->
+<view class="status-bar" style="height: {{statusBarHeight}}px;"></view>
+
+<!-- 定位按钮 -->
+<view class="relocate-btn" bindtap="onRelocate">
+  <text class="relocate-icon">◎</text>
+</view>
+
+<!-- 底部面板 -->
+<view class="bottom-panel">
+  <!-- 天气提示条 -->
+  <view class="weather-bar {{isBadWeather ? 'weather-bad' : ''}}">
+    <text class="weather-info">{{weatherIcon}} {{weatherText}}</text>
+    <text class="weather-tip" wx:if="{{weatherTip}}"> · {{weatherTip}}</text>
+  </view>
+
+  <!-- 未选终点：搜索入口 -->
+  <view wx:if="{{!hasEnd}}" class="panel-search">
+    <view class="location-row">
+      <view class="dot dot-green"></view>
+      <text class="location-text">{{startName}}</text>
+    </view>
+    <view class="search-entry" bindtap="onTapSearch">
+      <text class="search-placeholder">你要去哪儿？</text>
+    </view>
+  </view>
+
+  <!-- 已选终点：路线信息 + 叫车 -->
+  <view wx:else class="panel-route">
+    <view class="route-points">
+      <view class="point-row">
+        <view class="dot dot-green"></view>
+        <text class="point-text">{{startName}}</text>
+      </view>
+      <view class="point-line"></view>
+      <view class="point-row">
+        <view class="dot dot-red"></view>
+        <text class="point-text">{{endName}}</text>
+        <text class="clear-btn" bindtap="onClearEnd">✕</text>
+      </view>
+    </view>
+
+    <view class="route-info" wx:if="{{distanceText}}">
+      <text class="route-detail">{{distanceText}} · 约{{durationText}}</text>
+    </view>
+
+    <view class="price-row" wx:if="{{price}}">
+      <view class="price-left">
+        <text class="price-label">预估价</text>
+        <text class="price-value">¥{{price}}</text>
+        <text class="price-surge" wx:if="{{isBadWeather}}">恶劣天气加价</text>
+      </view>
+    </view>
+
+    <view class="call-btn" bindtap="onCallCar">
+      <text class="call-btn-text">呼叫快车</text>
+    </view>
+  </view>
+</view>

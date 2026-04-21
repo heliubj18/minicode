@@ -1,0 +1,101 @@
+<!-- 全屏地图 -->
+<map
+  id="tripMap"
+  class="map"
+  latitude="{{latitude}}"
+  longitude="{{longitude}}"
+  scale="{{scale}}"
+  markers="{{markers}}"
+  polyline="{{polyline}}"
+  show-location
+  enable-zoom
+  enable-scroll
+>
+</map>
+
+<!-- 底部面板 -->
+<view class="bottom-panel">
+
+  <!-- 阶段1：呼叫中 -->
+  <view wx:if="{{stage === 'calling'}}" class="stage-calling">
+    <view class="calling-ring" style="transform: rotate({{rotateAngle}}deg);">
+      <view class="ring-circle"></view>
+    </view>
+    <text class="stage-title">{{stageText}}</text>
+    <text class="stage-subtitle">{{endName}}</text>
+    <view class="cancel-link" bindtap="onCancel">
+      <text class="cancel-text">取消叫车</text>
+    </view>
+  </view>
+
+  <!-- 阶段2：司机前往 -->
+  <view wx:elif="{{stage === 'arriving'}}" class="stage-arriving">
+    <view class="driver-card">
+      <view class="driver-avatar">🚗</view>
+      <view class="driver-info">
+        <view class="driver-name-row">
+          <text class="driver-name">{{driver.name}}</text>
+          <text class="driver-rating">{{driver.rating}}分</text>
+        </view>
+        <text class="driver-car">{{driver.color}}{{driver.car}} {{driver.plate}}</text>
+      </view>
+      <view class="driver-action" bindtap="onCallDriver">
+        <text class="action-icon">📞</text>
+      </view>
+    </view>
+    <view class="eta-row">
+      <text class="eta-text">预计 {{countdown}} 分钟到达上车点</text>
+    </view>
+    <view class="cancel-link" bindtap="onCancel">
+      <text class="cancel-text">取消叫车</text>
+    </view>
+  </view>
+
+  <!-- 阶段3：行程中 -->
+  <view wx:elif="{{stage === 'riding'}}" class="stage-riding">
+    <view class="riding-header">
+      <text class="riding-title">行程中</text>
+      <text class="riding-dest">前往 {{endName}}</text>
+    </view>
+    <view class="riding-stats">
+      <view class="stat-item">
+        <text class="stat-value">{{remainDist || '--'}}</text>
+        <text class="stat-label">剩余距离</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <text class="stat-value">{{remainTime || '--'}}</text>
+        <text class="stat-label">预计时间</text>
+      </view>
+    </view>
+    <view class="driver-card-mini">
+      <text class="mini-driver">🚗 {{driver.name}} · {{driver.plate}}</text>
+      <view class="driver-action" bindtap="onCallDriver">
+        <text class="action-icon">📞</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 阶段4：已到达 -->
+  <view wx:elif="{{stage === 'finished'}}" class="stage-finished">
+    <text class="finish-title">已到达目的地</text>
+    <view class="finish-summary">
+      <view class="summary-row">
+        <text class="summary-label">起点</text>
+        <text class="summary-value">{{startName}}</text>
+      </view>
+      <view class="summary-row">
+        <text class="summary-label">终点</text>
+        <text class="summary-value">{{endName}}</text>
+      </view>
+      <view class="summary-divider"></view>
+      <view class="summary-row">
+        <text class="summary-label">行程费用</text>
+        <text class="summary-price">¥{{price}}</text>
+      </view>
+    </view>
+    <view class="pay-btn" bindtap="onPay">
+      <text class="pay-btn-text">支付 ¥{{price}}</text>
+    </view>
+  </view>
+</view>

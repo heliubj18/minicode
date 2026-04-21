@@ -1,0 +1,80 @@
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(180deg, #4A90D9 0%, #2C5F8A 100%);
+  color: #fff;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  padding-top: calc(12px + env(safe-area-inset-top, 44px));
+}
+
+.nav-back {
+  font-size: 15px;
+  color: #fff;
+  padding: 4px 8px;
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  margin-right: 50px;
+}
+
+.scroll-area {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.search-box {
+  padding: 12px 20px;
+}
+
+.search-input {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.city-list {
+  padding: 0 20px;
+}
+
+.city-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.city-item-hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.city-item-name {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.city-item-arrow {
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 40px;
+  font-size: 14px;
+  opacity: 0.6;
+}

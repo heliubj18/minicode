@@ -1,0 +1,284 @@
+.map {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* 底部面板 */
+.bottom-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 24px 20px;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom, 20px));
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+  z-index: 30;
+}
+
+/* ===== 阶段1：呼叫中 ===== */
+.stage-calling {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.calling-ring {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 16px;
+}
+
+.ring-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  border: 4px solid #f0f0f0;
+  border-top-color: #07c160;
+  box-sizing: border-box;
+}
+
+.stage-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.stage-subtitle {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.cancel-link {
+  padding: 8px 20px;
+}
+
+.cancel-text {
+  font-size: 14px;
+  color: #fa5151;
+}
+
+/* ===== 阶段2：司机前往 ===== */
+.stage-arriving {
+  display: flex;
+  flex-direction: column;
+}
+
+.driver-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.driver-avatar {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f7ff;
+  border-radius: 25px;
+}
+
+.driver-info {
+  flex: 1;
+}
+
+.driver-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.driver-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+}
+
+.driver-rating {
+  font-size: 13px;
+  color: #ff9500;
+  background: #fff8e6;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.driver-car {
+  font-size: 14px;
+  color: #999;
+}
+
+.driver-action {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f7ff;
+  border-radius: 22px;
+}
+
+.action-icon {
+  font-size: 20px;
+}
+
+.eta-row {
+  padding: 16px 0;
+  text-align: center;
+}
+
+.eta-text {
+  font-size: 15px;
+  color: #07c160;
+  font-weight: 500;
+}
+
+/* ===== 阶段3：行程中 ===== */
+.stage-riding {
+  display: flex;
+  flex-direction: column;
+}
+
+.riding-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.riding-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.riding-dest {
+  font-size: 14px;
+  color: #999;
+}
+
+.riding-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 16px 0;
+  background: #f8f8f8;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #999;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 30px;
+  background: #e0e0e0;
+}
+
+.driver-card-mini {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mini-driver {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ===== 阶段4：已到达 ===== */
+.stage-finished {
+  display: flex;
+  flex-direction: column;
+}
+
+.finish-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #07c160;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.finish-summary {
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.summary-label {
+  font-size: 14px;
+  color: #999;
+}
+
+.summary-value {
+  font-size: 14px;
+  color: #333;
+  max-width: 60%;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #e8e8e8;
+  margin: 4px 0;
+}
+
+.summary-price {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fa5151;
+}
+
+.pay-btn {
+  background: #07c160;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.pay-btn-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+}

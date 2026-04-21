@@ -1,0 +1,36 @@
+<view class="nav-header">
+  <text class="nav-back" bindtap="onBack">← 返回</text>
+  <text class="nav-title">选择城市</text>
+</view>
+
+<scroll-view class="scroll-area" type="list" scroll-y>
+  <!-- 搜索框 -->
+  <view class="search-box">
+    <input
+      class="search-input"
+      placeholder="搜索城市"
+      placeholder-style="color: rgba(255,255,255,0.5)"
+      value="{{searchValue}}"
+      bindinput="onSearchInput"
+    />
+  </view>
+
+  <!-- 城市列表 -->
+  <view class="city-list">
+    <view
+      class="city-item"
+      wx:for="{{filteredCities}}"
+      wx:key="*this"
+      data-city="{{item}}"
+      bindtap="onSelectCity"
+      hover-class="city-item-hover"
+    >
+      <text class="city-item-name">{{item}}</text>
+      <text class="city-item-arrow">›</text>
+    </view>
+  </view>
+
+  <view class="empty-tip" wx:if="{{filteredCities.length === 0}}">
+    <text>未找到匹配的城市</text>
+  </view>
+</scroll-view>

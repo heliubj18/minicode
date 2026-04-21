@@ -1,0 +1,216 @@
+.map {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.status-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 10;
+}
+
+/* 定位按钮 */
+.relocate-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 340px;
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 20;
+}
+
+.relocate-icon {
+  font-size: 22px;
+  color: #4A90D9;
+}
+
+/* 底部面板 */
+.bottom-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 0 20px;
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+  z-index: 30;
+}
+
+/* 天气条 */
+.weather-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.weather-bar.weather-bad {
+  background: #fff3e0;
+  margin: 0 -20px;
+  padding: 10px 20px;
+  border-radius: 20px 20px 0 0;
+}
+
+.weather-info {
+  font-size: 13px;
+  color: #666;
+}
+
+.weather-tip {
+  font-size: 13px;
+  color: #ff6b00;
+  font-weight: 500;
+}
+
+/* 搜索入口态 */
+.panel-search {
+  padding: 16px 0 20px;
+}
+
+.location-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.dot-green {
+  background: #07c160;
+}
+
+.dot-red {
+  background: #fa5151;
+}
+
+.location-text {
+  font-size: 14px;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-entry {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.search-placeholder {
+  font-size: 16px;
+  color: #bbb;
+}
+
+/* 路线信息态 */
+.panel-route {
+  padding: 16px 0 20px;
+}
+
+.route-points {
+  margin-bottom: 12px;
+}
+
+.point-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.point-text {
+  flex: 1;
+  font-size: 15px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.point-line {
+  width: 1px;
+  height: 16px;
+  background: #ddd;
+  margin-left: 4.5px;
+}
+
+.clear-btn {
+  font-size: 14px;
+  color: #ccc;
+  padding: 4px 8px;
+}
+
+.route-info {
+  padding: 8px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.route-detail {
+  font-size: 14px;
+  color: #666;
+}
+
+.price-row {
+  padding: 12px 0;
+}
+
+.price-left {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price-label {
+  font-size: 14px;
+  color: #999;
+}
+
+.price-value {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+.price-surge {
+  font-size: 12px;
+  color: #ff6b00;
+  background: #fff3e0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* 呼叫按钮 */
+.call-btn {
+  background: #07c160;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.call-btn-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+}
